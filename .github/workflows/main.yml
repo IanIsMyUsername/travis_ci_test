@@ -4,10 +4,17 @@ on:
     branches:
       - main
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Run script
+
+      - name: Set up Bash
+        uses: actions/setup-bash@v1
+
+      - name: Run Script
         run: ./test.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
