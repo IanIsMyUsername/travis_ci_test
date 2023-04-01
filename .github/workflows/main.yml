@@ -10,10 +10,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Set up Bash
-        uses: actions/setup-bash@v1
-
       - name: Run Script
         run: ./test.sh
         env:
