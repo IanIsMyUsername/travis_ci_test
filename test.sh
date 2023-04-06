@@ -14,5 +14,5 @@ echo $(date +%s) >> timestamp.txt
 git config user.email "15120073241@126.com"
 git config user.name "Yizhou"
 git add timestamp.txt
-git commit -m COMMIT_MESSAGE
+git commit -m $COMMIT_MESSAGE
 git push origin main
