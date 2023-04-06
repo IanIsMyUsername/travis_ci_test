@@ -1,11 +1,11 @@
 #!/bin/bash
 
 COMMIT_MESSAGE="Automatic Generate Timestamp"
-PREV_COMMIT=$(git rev-parse HEAD^)
+PREV_COMMIT=$(git rev-parse HEAD)
 PREV_COMMIT_MESSAGE=$(git log --format=%B -n 1 $PREV_COMMIT)
 
-if [[ "$PREV_COMMIT_MESSAGE" == COMMIT_MESSAGE ]]; then
-    return
+if [[ "$PREV_COMMIT_MESSAGE" == $COMMIT_MESSAGE ]]; then
+    exit
 fi
 
 
