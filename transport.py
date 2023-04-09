@@ -1,11 +1,11 @@
 import requests
 import json
+import os
 
-a = ${{ secrets.COMMITRESULTTOREP }}
-b = ${{ secrets.GITEE_TOKEN }}
+# secret_key = os.environ["COMMITRESULTTOREP"]
+secret_key2 = os.environ["GITEE_TOKEN"]
 
-print(a,b)
-
+print(secret_key2)
 
 # # GitHub API Token
 # GITHUB_TOKEN = "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"
