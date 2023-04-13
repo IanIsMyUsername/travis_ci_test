@@ -61,15 +61,15 @@ jobs:
           git init
           git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com "
           git config --global user.name "swiftyizhou"
-          git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+          git remote add gitee https://gitee.com/swiftyizhou/swiftgg-plugin-api.git
           git checkout -b new-branch
           git add .
           git commit -m "Add files"
-          git push -u gitee new-branch # 推送到 Gitee 分支
-          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \ 
-          --header 'Content-Type: application/json' \
-          --data-raw '{
-              "access_token": "${{ secrets.GITEE_TOKEN }}",
-              "source_branch": "new-branch",
-              "target_branch": "master"
-          }'
+#          git push -u gitee new-branch # 推送到 Gitee 分支
+#          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \
+#          --header 'Content-Type: application/json' \
+#          --data-raw '{
+#              "access_token": "${{ secrets.GITEE_TOKEN }}",
+#              "source_branch": "new-branch",
+#              "target_branch": "master"
+#          }'
