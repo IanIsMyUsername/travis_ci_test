@@ -1,34 +1,73 @@
-name: Run script on merge
+#name: Run script on merge
+#on:
+#  push:
+#    branches:
+#      - main
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    env:
+#      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+#    steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#        with:
+#          token: ${{ secrets.COMMITRESULTTOREP }}
+#
+#      - name: Run Script
+#        run: ./test.sh
+#
+#      - name: Set up Python 3.8
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: '3.8'
+#
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r requirements.txt
+#
+#      - name: Run Python script
+#        run: python transport.py
+#
+#
+#
+name: Push to Gitee
+
 on:
   push:
     branches:
-      - main
+      - main # 可以根据实际情况更改分支名称
+
 jobs:
-  build:
+  push-to-gitee:
     runs-on: ubuntu-latest
-    env:
-      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+#    env:
+#      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.COMMITRESULTTOREP }}
-          
-      - name: Run Script
-        run: ./test.sh
+          submodules: 'recursive'
 
-      - name: Set up Python 3.8
+      - name: Install Python 3.8
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
 
-      - name: Install dependencies
+      - name: Push to Gitee
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run Python script
-        run: python transport.py
-
-
-
+          cd testContent
+          git init
+          git remote add gitee https://gitee.com/swiftyizhou/swiftgg-plugin-api.git
+          git checkout -b new-branch
+          git add .
+          git commit -m "Add files"
+          git push -u gitee new-branch # 推送到 Gitee 分支
+          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \ 
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+              "access_token": "${{ secrets.GITEE_TOKEN }}",
+              "source_branch": "new-branch",
+              "target_branch": "master"
+          }'
