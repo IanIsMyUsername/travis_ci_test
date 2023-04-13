@@ -69,5 +69,9 @@ jobs:
           --data-raw '{
               "access_token": "${{ secrets.GITEE_TOKEN }}",
               "source_branch": "new-branch",
-              "target_branch": "master"
+              "target_branch": "master",
+              "committer": {
+                "name": "swiftyizhou",
+                "email": f"{swiftyizhou}@users.noreply.gitee.com"
+              }
           }'
