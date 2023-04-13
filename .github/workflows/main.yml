@@ -48,24 +48,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.GITEE_TOKEN }}
           submodules: 'recursive'
 
-      - name: Install Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
+#      - name: Install Python 3.8
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: '3.8'
 
       - name: Push to Gitee
         run: |
           cd testContent
           git init
-          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com "
+          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
           git config --global user.name "swiftyizhou"
-          git remote add gitee https://gitee.com/swiftyizhou/swiftgg-plugin-api.git
+          git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
           git checkout -b new-branch
           git add .
           git commit -m "Add files"
-          git push -u gitee new-branch # 推送到 Gitee 分支
+          git push -u gitee new-branch
 #          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \
 #          --header 'Content-Type: application/json' \
 #          --data-raw '{
