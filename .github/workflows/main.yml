@@ -65,7 +65,7 @@ jobs:
           git checkout -b new-branch
           git add .
           git commit -m "Add files"
-#          git push -u gitee new-branch # 推送到 Gitee 分支
+          git push -u gitee new-branch # 推送到 Gitee 分支
 #          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \
 #          --header 'Content-Type: application/json' \
 #          --data-raw '{
