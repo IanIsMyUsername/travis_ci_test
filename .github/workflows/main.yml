@@ -58,7 +58,7 @@ jobs:
       - name: Push to Gitee
         run: |
           cd testContent
-          git config --global user.email "swiftyizhou@users.noreply.gitee.com"
+          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com "
           git config --global user.name "swiftyizhou"
           git init
           git remote add gitee https://gitee.com/swiftyizhou/swiftgg-plugin-api.git
