@@ -59,6 +59,7 @@ jobs:
 #          python-version: '3.8'
 
       - name: Push to Gitee
+        uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITEE_TOKEN }}
         run: |
