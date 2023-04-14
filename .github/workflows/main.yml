@@ -65,9 +65,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "$GITEE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          echo "$GITEE_KEY"
-          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
-          git config --global user.name "swiftyizhou"
           git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
 
           # cp -r ../testContent  swiftgg-plugin-api
