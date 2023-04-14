@@ -62,7 +62,7 @@ jobs:
         run: |
           mkdir pass
           cd pass
-          echo GITEE_KEY
+          echo $GITEE_KEY
           # mkdir -p  ~/.ssh/ && echo GITEE_KEY > ~/.ssh/id_rsa
           # git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
           # cp -r ../testContent  swiftgg-plugin-api
