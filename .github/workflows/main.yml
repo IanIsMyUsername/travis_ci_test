@@ -6,8 +6,8 @@
 #jobs:
 #  build:
 #    runs-on: ubuntu-latest
-#    env:
-#      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+  #  env:
+  #    GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
 #    steps:
 #      - name: Checkout Repository
 #        uses: actions/checkout@v2
@@ -42,8 +42,8 @@ on:
 jobs:
   push-to-gitee:
     runs-on: ubuntu-latest
-#    env:
-#      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+   env:
+     GITEE_KEY: ${{ secrets.PUSH_TO_GITEE }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -62,6 +62,7 @@ jobs:
         run: |
           mkdir pass
           cd pass
+          mkdir -p  ~/.ssh/ && echo $GITEE_KEY > ~/.ssh/id_rsa
           git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
           # cp -r ../testContent  swiftgg-plugin-api
           # cd swiftgg-plugin-api
