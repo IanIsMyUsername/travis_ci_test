@@ -34,19 +34,20 @@
 #
 name: Push to Gitee
 
-on:
-  push:
-    branches:
-      - main # 可以根据实际情况更改分支名称
+on: [ push, delete, create ]
+
+#   push:
+#     branches:
+#       - main # 可以根据实际情况更改分支名称
 
 jobs:
   push-to-gitee:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.COMMITRESULTTOREP }}
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     token: ${{ secrets.COMMITRESULTTOREP }}
   
       # - name: Checkout Gitee Repo
       #   uses: actions/checkout@v2
