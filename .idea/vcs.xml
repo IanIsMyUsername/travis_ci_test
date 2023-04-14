@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pass/swiftgg-plugin-api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/testContent1" vcs="Git" />
   </component>
 </project>

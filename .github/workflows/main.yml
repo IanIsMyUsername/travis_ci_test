@@ -58,19 +58,35 @@ jobs:
 
       - name: Push to Gitee
         run: |
-          cd testContent
-          git init
+          mkdir pass
+          cd pass
+          git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+          cp -r ../testContent  swiftgg-plugin-api
+          cd swiftgg-plugin-api
           git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
           git config --global user.name "swiftyizhou"
           git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-          git checkout -b new-branch
+          git checkout mater
           git add .
           git commit -m "Add files"
-          git push -u gitee new-branch
-#          curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \
-#          --header 'Content-Type: application/json' \
-#          --data-raw '{
-#              "access_token": "${{ secrets.GITEE_TOKEN }}",
-#              "source_branch": "new-branch",
-#              "target_branch": "master"
-#          }'
+          git push -f -u gitee master
+
+        #   mkdir pass
+        #   cd pass
+        #   git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+        #   cp -r ../testContent swiftgg-plugin-api
+        #   cd swiftgg-plugin-api
+        #   git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
+        #   git config --global user.name "swiftyizhou"
+        #   git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+        #   git checkout -b new-branch
+        #   git add .
+        #   git commit -m "Add files"
+        #   git push -u gitee new-branch
+        #  curl --location --request POST 'https://gitee.com/api/v5/repos/swiftyizhou/swiftgg-plugin-api/merges' \
+        #  --header 'Content-Type: application/json' \
+        #  --data-raw '{
+        #      "access_token": "${{ secrets.GITEE_TOKEN }}",
+        #      "source_branch": "new-branch",
+        #      "target_branch": "master"
+        #  }'

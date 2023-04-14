@@ -84,9 +84,9 @@
 #     "branch": "master",
 #     "sha": sha,
 #     "committer": {
-#         "name": GITEE_REPO_OWNER,
-#         "email": f"{GITEE_REPO_OWNER}@users.noreply.gitee.com"
-#     }
+#       "name": GITEE_REPO_OWNER,
+#       "email": f"{GITEE_REPO_OWNER}@users.noreply.gitee.com"
+#      }
 # }
 #
 # # Push File to Gitee
