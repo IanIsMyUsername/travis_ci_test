@@ -63,15 +63,15 @@ jobs:
           mkdir pass
           cd pass
           git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-          cp -r ../testContent  swiftgg-plugin-api
-          cd swiftgg-plugin-api
-          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
-          git config --global user.name "swiftyizhou"
-          git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-          git checkout new-branch-4142
-          git add .
-          git commit -m "Add files"
-          git push -f -u gitee new-branch-4142
+          # cp -r ../testContent  swiftgg-plugin-api
+          # cd swiftgg-plugin-api
+          # git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
+          # git config --global user.name "swiftyizhou"
+          # git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+          # git checkout new-branch-4142
+          # git add .
+          # git commit -m "Add files"
+          # git push -f -u gitee new-branch-4142
 
         #   mkdir pass
         #   cd pass
