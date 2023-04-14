@@ -59,6 +59,8 @@ jobs:
 #          python-version: '3.8'
 
       - name: Push to Gitee
+        with:
+          token: ${{ secrets.GITEE_TOKEN }}
         run: |
           mkdir pass
           cd pass
