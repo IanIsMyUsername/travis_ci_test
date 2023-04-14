@@ -51,10 +51,10 @@ jobs:
       - name: Checkout Gitee Repo
         uses: actions/checkout@v2
         with:
-          repository: 'git://gitee.com/swiftyizhou/swiftgg-plugin-api.git'
-          ssh-key: ${{ secrets.PUSH_TO_GITEE }}
+          repository: 'git@gitee.com:swiftyizhou/swiftgg-plugin-api.git'
+          # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
           ref: master
-          # token: ${{ secrets.GITEE_TOKEN }}
+          token: ${{ secrets.GITEE_TOKEN }}
 
           # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
 
