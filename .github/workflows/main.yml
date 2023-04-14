@@ -68,10 +68,10 @@ jobs:
           git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
           git config --global user.name "swiftyizhou"
           git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-          git checkout mater
+          git checkout new-branch-4142
           git add .
           git commit -m "Add files"
-          git push -f -u gitee master
+          git push -f -u gitee new-branch-4142
 
         #   mkdir pass
         #   cd pass
