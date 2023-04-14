@@ -52,7 +52,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'git@gitee.com:swiftyizhou/swiftgg-plugin-api.git'
-          ssh-key: ${{ secrets.PUSH_TO_GITEE }}
+          token: ${{ secrets.GITEE_TOKEN }}
+
+          # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
 
 #      - name: Install Python 3.8
 #        uses: actions/setup-python@v2
