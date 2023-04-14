@@ -42,8 +42,8 @@ on:
 jobs:
   push-to-gitee:
     runs-on: ubuntu-latest
-   env:
-     GITEE_KEY: ${{ secrets.PUSH_TO_GITEE }}
+    env:
+      GITEE_KEY: ${{ secrets.PUSH_TO_GITEE }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
