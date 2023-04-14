@@ -42,8 +42,6 @@ on:
 jobs:
   push-to-gitee:
     runs-on: ubuntu-latest
-    env:
-      GITEE_KEY: ${{ secrets.PUSH_TO_GITEE }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -59,13 +57,15 @@ jobs:
 #          python-version: '3.8'
 
       - name: Push to Gitee
+        env:
+          GITEE_KEY: ${{ secrets.PUSH_TO_GITEE22 }}
         run: |
           mkdir pass
           cd pass
           mkdir -p ~/.ssh
           echo "$GITEE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          # mkdir -p  ~/.ssh/ && echo GITEE_KEY > ~/.ssh/id_rsa
+
           git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
           # cp -r ../testContent  swiftgg-plugin-api
           # cd swiftgg-plugin-api
