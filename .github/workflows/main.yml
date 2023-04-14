@@ -48,8 +48,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITEE_TOKEN }}
-          submodules: 'recursive'
+          token: ${{ secrets.COMMITRESULTTOREP }}
+          # token: ${{ secrets.GITEE_TOKEN }}
+          # submodules: 'recursive'
 
 #      - name: Install Python 3.8
 #        uses: actions/setup-python@v2
