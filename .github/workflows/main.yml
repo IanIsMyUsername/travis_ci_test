@@ -34,7 +34,7 @@
 #
 name: Push to Gitee
 
-on: [ push, delete, create ]
+on: [ push ]
 
 #   push:
 #     branches:
