@@ -48,41 +48,37 @@ jobs:
         with:
           token: ${{ secrets.COMMITRESULTTOREP }}
   
-      - name: Checkout Gitee Repo
-        uses: actions/checkout@v2
-        with:
-          repository: 'git@gitee.com:swiftyizhou/swiftgg-plugin-api.git'
-          # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
-          ref: master
-          token: ${{ secrets.GITEE_TOKEN }}
+      # - name: Checkout Gitee Repo
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: 'git@gitee.com:swiftyizhou/swiftgg-plugin-api.git'
+      #     # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
+      #     ref: master
+      #     token: ${{ secrets.GITEE_TOKEN }}
 
-          # ssh-key: ${{ secrets.PUSH_TO_GITEE }}
+      - name: Push to Gitee
+        env:
+          GITEE_KEY: ${{ secrets.PUSH_TO_GITEE }}
+        run: |
+          mkdir pass
+          cd pass
+          mkdir -p ~/.ssh
+          echo "$GITEE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "$GITEE_KEY"
+          git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
+          git config --global user.name "swiftyizhou"
+          git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
 
-#      - name: Install Python 3.8
-#        uses: actions/setup-python@v2
-#        with:
-#          python-version: '3.8'
-
-      # - name: Push to Gitee
-      #   env:
-      #     GITEE_KEY: ${{ secrets.PUSH_TO_GITEE22 }}
-      #   run: |
-      #     mkdir pass
-      #     cd pass
-      #     mkdir -p ~/.ssh
-      #     echo "$GITEE_KEY" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     echo "$GITEE_KEY"
-      #     git clone git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-      #     # cp -r ../testContent  swiftgg-plugin-api
-      #     # cd swiftgg-plugin-api
-      #     # git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
-      #     # git config --global user.name "swiftyizhou"
-      #     # git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
-      #     # git checkout new-branch-4142
-      #     # git add .
-      #     # git commit -m "Add files"
-      #     # git push -f -u gitee new-branch-4142
+          # cp -r ../testContent  swiftgg-plugin-api
+          # cd swiftgg-plugin-api
+          # git config --global user.email "12740625+swiftyizhou@user.noreply.gitee.com"
+          # git config --global user.name "swiftyizhou"
+          # git remote add gitee git@gitee.com:swiftyizhou/swiftgg-plugin-api.git
+          # git checkout new-branch-4142
+          # git add .
+          # git commit -m "Add files"
+          # git push -f -u gitee new-branch-4142
 
 
         #   mkdir pass
